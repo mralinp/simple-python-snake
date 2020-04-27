@@ -1,7 +1,7 @@
 # simple-python-snake
 
 ## Colorama cheatSheet
-
+'''
 ESC [ 0 m       # reset all (colors and brightness)
 ESC [ 1 m       # bright
 ESC [ 2 m       # dim (looks same as normal brightness)
@@ -42,3 +42,4 @@ ESC [ mode J    # clear the screen
 
 # clear the line
 ESC [ mode K    # clear the line
+'''
