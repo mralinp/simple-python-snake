@@ -1,3 +1,5 @@
+#! /usr/bin/python3 
+
 # SIMPLE-PYTHON-SNAKE
 # Practical level : elementry
 # Project of Computer Sience Elementrys (CSE 101) 
@@ -24,37 +26,82 @@ import sys
 import os
 from colorama import init
 init()
-print('\033[31m' + 'Ali')
 
-# sample print code
-print('\033[10;25H\033[33m\033[40m' + 'some red text')
-# reset defaults
-print('\033[39m') 
-# # A dict to define the change made on snakes possition while moving around.
-# direction = {'UP':(0, +1), 'DOWN':(0, -1), 'LEFT':(-1, 0), 'RIGHT':(+1, 0)}
+t_color_map = {
+    'black' : '30',
+    'red': '31',
+    'green' : '32',
+    'yellow' : '33',
+    'blue' : '34', 
+    'magenta' : '35', 
+    'cyan' : '36', 
+    'white' : '37',
+    'reset': '39'
+    }
 
-# GREEN = 0xff
-# GRAY = 0x55
-# RED = 0x33
+b_color_map = {
+    'black' : '40',
+    'red': '41',
+    'green' : '42',
+    'yellow' : '43',
+    'blue' : '44', 
+    'magenta' : '45', 
+    'cyan' : '46', 
+    'white' : '47',
+    'reset': '49'
+    }
+
+intensity_map = {
+    'reset' : '0', 
+    'bright' : '1', 
+    'dim':'2', 
+    'normal':'22'
+    }
+
+board_size = (40 ,17)
+
+snake = []
+food = []
+walls = []
 
 
-# def print_XY(x, y, color=GRAY, h_color=GRAY):
-#     print("")
+# a function to print a text on an arbitrary possition
+def print_XY(msg, x=1, y=1, t_color='reset' , b_color='reset', intensity='reset'):
+    
+    # possition the cursare on (x, y) porisstion
+    s = '\033[' + str(x) + ';' + str(y) + 'H' 
+    
+    # set text color
+    s = s +'\033[' + t_color_map[t_color] + 'm'
+    
+    # set background color
+    s = s + '\033[' + b_color_map[b_color] + 'm'
+    
+    # set intensity
+    s = s + '\033[' + intensity_map[intensity] + 'm'
+    
+    print(s+msg)
 
-# board_size = (80 ,40)
+def clear_screan():
+    os.system('clear')
+    for i in range(1, board_size[0]):
+        for j in range(1, board_size[1]):
+            print_XY(' ', j, i, 'red', 'blue', 'bright')
 
-# snake = []
-# food = []
-# walls = []
-
-# for i in walls:
-#     print_XY(i, '#')
-
-# for i in food:
-#     print_XY(i, 'F')
-
-# for i in snake:
-#     print_XY(i, 'O', GREEN, RED)
+def draw_window(width, height, color):
+    for i in range(int(board_size[0]/2)-1, int(board_size[0]/2)+width):
+        for j in range(int(board_size[1]/2)-1, int(board_size[1]/2) + height):
+            print_XY(' ', j, i, 'reset', color, 'bright')
 
 
+
+lose = False
+direction = (0, 0)
+
+# game loops
+while (lose == False):
+    for i in 
+clear_screan()
+draw_window(5,5, 'green')
+a = input()
 

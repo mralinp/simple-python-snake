@@ -1,5 +1,16 @@
 # simple-python-snake
+This is my first programming project, when i was a jounior studen at shiraz univesity (2015). 
+I uploaded source code and some discriptions heres and, i hope this could help some people find what they need for their related school projects.
 
+## project deffenition
+Please write a simple snake game as you may seen on old Nokia phones or other old phones.
+The game runs on a single page terminal and the size of the page is constant (i.e. 80*40).\\
+A single snake moves around the game board witch is controlled by user, using arrows keys or 'W', 'A', 'S' and 'D' to move UP, LEFT, DOWN and RIGHT respectively.
+by pressing 'Esc' key the game has to pause. you have to make a ability to store the highest score on the game or other arbitrary method such as storying each user score.\\
+After a random time a single charachter food will deployed on a random spot of map and if snake eats that, its tail become longer.\\
+Map can contain some walls or obstacles that, if snake hits them the game will finish and player loses the game. the game can end also when snake eats its own tail.
+### bonuses
+Any creativity to make the game looks friendly and more pleasant such as having a menu, several levels, or even it can have a story line(this must be a little hard but nothing is impossible, trust me my child).
 ## Colorama cheatSheet
 ```
 Intensity:
