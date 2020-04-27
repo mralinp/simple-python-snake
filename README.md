@@ -22,18 +22,17 @@ first you have to install python3 and pip3 on your computer.
 
 for example on ubuntu open a terminal and type:
 
+```console
+foo@bar:~$ sudo apt update
+foo@bar:~$ sudo apt install python3
+foo@bar:~$ sudo apt install python3-pip
 ```
-$ sudo apt update
-$ sudo apt install python3
-$ sudo apt install python3-pip
 
-```
 
 After that install colorama library using pip3:
 
-```
-$ sudo pip3 install colorama
-
+```console
+foo@bar:~$ sudo pip3 install colorama
 ```
 ## Colorama cheatSheet
 
