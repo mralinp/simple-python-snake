@@ -16,6 +16,25 @@ Map can contain some walls or obstacles that, if snake hits them the game will f
 
 Any creativity to make the game looks friendly and more pleasant such as having a menu, several levels, or even it can have a story line(this must be a little hard but nothing is impossible, trust me my child).
 
+## How to run this?
+
+first you have to install python3 and pip3 on your computer.
+
+for example on ubuntu open a terminal and type:
+
+```
+$ sudo apt update
+$ sudo apt install python3
+$ sudo apt install python3-pip
+
+```
+
+After that install colorama library using pip3:
+
+```
+$ sudo pip3 install colorama
+
+```
 ## Colorama cheatSheet
 
 ```
