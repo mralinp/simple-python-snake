@@ -1,4 +1,5 @@
-# simple-python-snake
+simple-python-snake
+======
 This is my first programming project, when i was a jounior studen at shiraz univesity (2015). 
 I uploaded source code and some discriptions heres and, i hope this could help some people find what they need for their related school projects.
 
@@ -34,7 +35,42 @@ After that install colorama library using pip3:
 ```console
 foo@bar:~$ sudo pip3 install colorama
 ```
-## Colorama cheatSheet
+
+Now all of pre-requirements are installed, and you are ready to run the code.
+
+if you are on linux type:
+
+```console
+foo@bar:~$ sudo chmod +x source.py
+foo@bar:~$ ./source
+```
+
+Or just simply type:(on any platform)
+
+```console
+foo@bar:~$ python3 source.py
+```
+
+## Colorama
+Colorama is responsible of positioning the charchters on the screen and change their color.
+The example bellow showes how easily we can do that.
+
+```python
+from colorama import init
+init()
+
+# possition the cursor on column 12 and row 5 (\033[12;5H)
+#set text color to red (\033[32m)
+#set the back ground color to blue (\033[44m)
+# and with the intensity of bright (\033[1m)
+# then print the text.
+print("\033[12;5H" + "\033[32m" + "\033[44m" + "Some text")
+```
+For more informations you can look at the [colorama cheatsheet](#colorama-cheatsheet) to find other stuffs and see the meaning of each ascii code.
+And also this link could be helpful too: [PyPi Colorama](https://pypi.org/project/colorama/)
+
+
+### Colorama CheatSheet
 
 ```
 Intensity:
