@@ -25,8 +25,7 @@ for example on ubuntu open a terminal and type:
 
 ```console
 foo@bar:~$ sudo apt update
-foo@bar:~$ sudo apt install python3
-foo@bar:~$ sudo apt install python3-pip
+foo@bar:~$ sudo apt install git python3 python3-pip
 ```
 
 
@@ -41,6 +40,9 @@ Now all of pre-requirements are installed, and you are ready to run the code.
 if you are on linux type:
 
 ```console
+foo@bar:~$ cd ~
+foo@bar:~$ git clone https://github.com/mralinp/simple-python-snake.git
+foo@bar:~$ cd simple-python-snake
 foo@bar:~$ sudo chmod +x source.py
 foo@bar:~$ ./source
 ```
