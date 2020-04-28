@@ -53,7 +53,7 @@ foo@bar:~$ python3 source.py
 
 ## Colorama
 Colorama is responsible of positioning the charchters on the screen and change their color.
-The example bellow showes how easily we can do that.
+The example bellow showes how easily we can use it.
 
 ```python
 from colorama import init
