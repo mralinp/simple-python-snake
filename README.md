@@ -62,10 +62,10 @@ from colorama import init
 init()
 
 # possition the cursor on column 12 and row 5 (\033[12;5H)
-#set text color to red (\033[32m)
-#set the back ground color to blue (\033[44m)
+# set text color to red (\033[32m)
+# set back ground color to blue (\033[44m)
 # and with the intensity of bright (\033[1m)
-# then print the text.
+# then print 'Some Text'.
 print("\033[12;5H" + "\033[32m" + "\033[44m" + "Some text")
 ```
 For more informations you can look at the [colorama cheatsheet](#colorama-cheatsheet) to find other stuffs and see the meaning of each ascii code.
