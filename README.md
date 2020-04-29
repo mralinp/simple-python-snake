@@ -117,3 +117,10 @@ ESC [ mode J    # clear the screen
 Clear the line:
 ESC [ mode K    # clear the line
 ```
+
+## Non-Blocking input
+This project had an other embeded challenge and that was getting async or Non-Blocking input from the terminal. here i used some advices from stack overflow, and changed some things myself and finaly wrote a new module to handel the inputs from the user. It's wasn't easy to undrestand what is going on there that years but now i see that is soo easy, so let me explain:
+
+Any machine has a mechanism to handel the I\O devices, on our computers operating system is responsible of this so, when you want to use an I\O device like keyboard monitor, printer, hard disk, etc. you have to ask your OS to comunicate with the device for you. So you don't have to get inputs from keyboard directly , OS is your partner and you ask any thing from him. And also user cant get his inputs directly to you, he gives the inputs to the OS.
+
+Any language has a system to charachter inputs from the OS, for example function `input()` in python. it gets the input from user and returns it as a string.
