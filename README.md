@@ -119,8 +119,12 @@ ESC [ mode K    # clear the line
 ```
 
 ## Non-Blocking input
-This project had an other embeded challenge and that was getting async or Non-Blocking input from the terminal. here i used some advices from stack overflow, and changed some things myself and finaly wrote a new module to handel the inputs from the user. It's wasn't easy to undrestand what is going on there that years but now i see that is soo easy, so let me explain:
+This project had another embeded challenge and that was getting async or Non-Blocking input from the terminal. here i used some advices from stack overflow, and changed some things myself and finaly wrote a new module to handel the inputs from the user. It's wasn't easy to undrestand what is going on there, at least for those days but now i see that was too easy, let me explain:
 
 Any machine has a mechanism to handel the I\O devices, on our computers operating system is responsible of this so, when you want to use an I\O device like keyboard monitor, printer, hard disk, etc. you have to ask your OS to comunicate with the device for you. So you don't have to get inputs from keyboard directly , OS is your partner and you ask any thing from him. And also user cant get his inputs directly to you, he gives the inputs to the OS.
 
-Any language has a system to charachter inputs from the OS, for example function `input()` in python. it gets the input from user and returns it as a string.
+Any language has a system to charachter inputs from the OS, for example function `input()` in python. it gets the input from user and returns it as a string. the input method is implimented by using standard input output system library that is working with the operating system, in our case `python` when you want to get input from the OS the python developers defined that any character you type by the keyboard has to be echoed and the getting input task is finished just when you pressed the `return` on your keyboard, this is how function `input()` defined in python.
+
+Now here we have an other senario, the user can press a key at any time he wants and we dont need to wait for him to press a key, so the code must keeps working and at any cycle or at any 5, 10, etc cycle, depends on code, it can check that if there is a new input or not, if there is a new one, do the appropriate job for it.
+
+In this project keyboard_manager.py is my input method, it changes the terminal settings and makes it appropriate for our goal.
