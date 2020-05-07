@@ -52,18 +52,24 @@ def print_XY(msg, x=1, y=1, color='reset' , bg_color='reset', intensity='reset')
     
     print(s+msg)
 # clear whole the screan
-def clear_screan():
+def clear_screen():
     system('clear')
     
 # prints a rectangle with given two corner diameter points a and b
 #  a-----
-#  |     | 
-#  |_____b
+#  -    - 
+#  -----b
 def draw_rectangular(a, b, color='reset', bg_color='reset', intensity="reset"):
     for i in range(a[0], b[0]):
         for j in range(a[1], b[1]):
             print_XY(' ', i, j, color, bg_color, intensity)
 
+# This function changes the strings possition on screen
+def swap(msg, p, s, color="reset", bg_color="reset", intensity="reset"):
+    # Prints white spaces on old possition (it seems that we are eraseing an string)
+    print_XY(" ", p[0], p[1], color, bg_color, intensity)
+    # Prints new string in the new possition
+    print_XY(msg, s[0], s[1], color, bg_color, intensity)
 
 if __name__ == "__main__" :
     init()
