@@ -127,4 +127,4 @@ Any language has a system to charachter inputs from the OS, for example function
 
 Now here we have an other senario, the user can press a key at any time he wants and we dont need to wait for him to press a key, so the code must keeps working and at any cycle or at any 5, 10, etc cycle, depends on code, it can check that if there is a new input or not, if there is a new one, do the appropriate job for it.
 
-In this project keyboard_manager.py is my input method, it changes the terminal settings and makes it appropriate for our goal.
+In this project `keyboard_manager.py` is my input method, it changes the terminal settings and makes it appropriate for our goal.
