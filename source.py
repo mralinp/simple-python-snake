@@ -5,6 +5,7 @@ import display
 import db
 from time import sleep
 from random import choice, randint
+import db
 # screen_size
 screen_size = (40, 16)
 
@@ -102,13 +103,33 @@ def start_game():
         display.print_XY("A", p[0], p[1], "red", "blue", "bright")
     draw_ingame_score(score)
 
-
-def printObj(c, pts, color = "reset", bg_color="reset"):
-    for p in pts:
-        display.print_XY(c, p[0], p[1], color, bg_color, "bright")
-
 def show_score_board():
-    print ("1")
+    display.print_XY("", 1, 1)
+    display.clear_screen();
+    draw_frame(screen_size[0], screen_size[1])
+    buff = db.load()
+    msg = ""
+    name = "name"
+    score = "Score"
+    tmp = screen_size[0] - len(name) - len(score)
+    msg = name + " "*tmp + score
+    display.print_XY(msg, 1,1, "yellow", "blue", "bright")
+    color = ["green", "red"]
+    toggle = 1
+    if(buff[0] != ""):
+        for i in range(len(buff)):
+            name, score = buff[i].split(":")
+            score = score[:-1]
+            tmp = screen_size[0] - len(name) - len(score)
+            msg = name + " "*tmp + score
+            display.print_XY(msg, 1,2+i, "white", color[toggle], "bright")
+            if(toggle == 0):
+                toggle = 1
+            else:
+                toggle = 0
+            
+        
+    
     
 def loser_check(snake, walls):
     if(snake[0] in snake[1:]):
@@ -116,6 +137,7 @@ def loser_check(snake, walls):
     if(snake[0] in walls):
         return True
     
+# chooses a random point in the board but before that we subtract allready used points from board
 def gen_food(snake, wall, food):
     board = []
     for i in range(1, screen_size[0] + 1):
@@ -135,6 +157,25 @@ def gen_food(snake, wall, food):
 def print_food(food):
     for f in food:
         display.print_XY("A", f[0], f[1], "yellow", "blue", "bright")
+
+# When the game is finished get players name and save the score
+def end_game(score, kb):
+    display.print_XY("", 1, 1)
+    display.clear_screen()
+    draw_frame(screen_size[0], screen_size[1])
+    msg = "Your Score is : " + str(score)
+    display.print_XY(msg, int(screen_size[0]/2)-int(len(msg)/2), int(screen_size[1]/2)-3, "green", "blue", "bright")
+    msg = "Your Beautiful name?"
+    display.print_XY(msg, int(screen_size[0]/2)-int(len(msg)/2), int(screen_size[1]/2), "green", "blue", "bright")
+    display.print_XY("", int(screen_size[0]/2), int(screen_size[1]/2) + 3, "yellow", "blue", "bright")
+    kb.set_normal_term()
+    name = input()
+    db.save(name, score)
+    display.print_XY("", 1, 1)
+    display.print_XY("good bye!", 1, 1, "green", "blue", "bright")
+    sleep(1.5)
+    display.clear_screen()
+
 # Main function
 if __name__ == '__main__':
     
@@ -211,29 +252,38 @@ if __name__ == '__main__':
                 if(key >= 0x01 and key <= 0x04):
                     g_state = 5
                     n_state = True
-                # elif(key == 0x06):
-                #     g_state = 6
-                #     n_state = True
-                # elif(key == 0x7):
-                #     g_state = 7
                 
             elif(g_state == 5):
-                n_dir = key_direction_map[key]
-                tmp = m_dir[0] + n_dir[0], m_dir[1] + n_dir[1]
-                if(tmp[1] != tmp[0] or tmp[0] != 0):
-                    m_dir = n_dir
-                
-            # elif(key == 0x06):
-            #     g_state = 6
-            #     n_state = True
-            # elif(key == 0x7):
-            #     g_state = 7
-            #     n_state = True
+                if(key >= 0x01 and key <= 0x04):
+                    n_dir = key_direction_map[key]
+                    tmp = m_dir[0] + n_dir[0], m_dir[1] + n_dir[1]
+                    if(tmp[1] != tmp[0] or tmp[0] != 0):
+                        m_dir = n_dir 
+                elif(key == 0x06):
+                    g_state = 7
+                    n_state = True
+            elif(g_state == 2):
+                # By pressing q return to the main menu
+                if(key == 0x07):
+                    g_state = 0
+                    n_state = True
+            elif(g_state == 7):
+                if(key == 0x07):
+                    g_state = 0
+                    n_state = True
+                elif(key == 0x06):
+                    display.print_XY(" "*len("pause p: unpaue q: exit"), 1, screen_size[1] + 1, "green", "black", "bright")
+                    g_state = 5
+                    
                     
         if(r_menu):
             draw_menu(m_state)
             
         if(n_state):
+            if(g_state == 0):
+                score = 0
+                m_state = 0
+                init_game()
             # start a new game
             if(g_state == 1):
                 start_game()
@@ -244,8 +294,13 @@ if __name__ == '__main__':
             # exit selected
             elif (g_state == 3):
                 break
+            # the game is running and the key must change the direction
             elif (g_state == 5):
                 m_dir = key_direction_map[key]
+            # pause sellected we have to pause the game
+            elif (g_state == 7):
+                display.print_XY("pause p: unpaue q: exit", 1, screen_size[1] + 1, "yellow", "black", "bright")
+            
                 
         # if game is running move the snake
         # only move @ every 50 cycle 
@@ -287,6 +342,7 @@ if __name__ == '__main__':
                     food_gen_timer = food_gen_timer - 1
         # we are here now!
         if(g_state == 6):
+            end_game(score, kb)
             break
     # reset display settings
     display.print_XY("", 1, 1)
@@ -294,9 +350,6 @@ if __name__ == '__main__':
     
     # finally, set terminal settings to normal
     kb.set_normal_term()
-    
-    # close any oppend files
-    #db.close()
     
     # now safely exit
     exit(0)
