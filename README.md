@@ -3,8 +3,8 @@ simple-python-snake
 This is my first programming project, when i was a jounior studen at shiraz univesity (2015). 
 I uploaded source code and some discriptions heres and, i hope this could help some people find what they need for their related school projects.
 
-![menu image](https://github.com/mralinp/simple-python-snake/edit/master/img1.png)
-![game image](https://github.com/mralinp/simple-python-snake/edit/master/img2.png)
+![menu image](https://github.com/mralinp/simple-python-snake/blob/master/img1.png)
+![game environment](https://github.com/mralinp/simple-python-snake/blob/master/img2.png)
 ## project deffenition
 Please write a simple snake game as you may seen on old Nokia phones or other old phones.
 The game runs on a single page terminal and the size of the page is constant (i.e. 80*40).
