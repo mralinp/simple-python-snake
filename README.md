@@ -65,7 +65,7 @@ init()
 
 # possition the cursor on column 12 and row 5 (\033[12;5H)
 # set text color to red (\033[32m)
-# set back ground color to blue (\033[44m)
+# set background color to blue (\033[44m)
 # and with the intensity of bright (\033[1m)
 # then print 'Some Text'.
 print("\033[12;5H" + "\033[32m" + "\033[44m" + "Some text")
