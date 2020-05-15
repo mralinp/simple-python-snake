@@ -1,7 +1,6 @@
 from colorama import init
 from os import system
 
-
 # text color map
 color_map = {
     'black' : '30',
