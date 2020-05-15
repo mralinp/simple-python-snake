@@ -53,6 +53,7 @@ def print_XY(msg, x=1, y=1, color='reset' , bg_color='reset', intensity='reset')
     print(s+msg)
 # clear whole the screan
 def clear_screen():
+    print_XY("", 1, 1)
     system('clear')
     
 # prints a rectangle with given two corner diameter points a and b
