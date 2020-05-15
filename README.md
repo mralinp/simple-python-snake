@@ -1,7 +1,9 @@
 simple-python-snake
 ======
 This is my first programming project, when i was a jounior studen at shiraz univesity (2015). 
-I uploaded source code and some discriptions heres and, i hope this could help some people find what they need for their related school projects.
+I uploaded source code and some discriptions here and, i hope this could help some people find what they need for their related school projects.
+
+Maybe there exists some bugs in this project but, because this is just an example for begginers and its onle for educational porpuses. In our case here it doesn't matter having some bugs for experiencing a smooth gameplay, confortable UI or etc. The only thing that matters in here, is you can see how to get things working for elementary school projects. Anyway if you've seen any issues, you can tell me to fix them.
 
 ![menu image](https://github.com/mralinp/simple-python-snake/blob/master/img1.png)
 ![game environment](https://github.com/mralinp/simple-python-snake/blob/master/img2.png)
