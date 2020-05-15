@@ -73,5 +73,5 @@ def swap(msg, p, s, color="reset", bg_color="reset", intensity="reset"):
 
 if __name__ == "__main__" :
     init()
-    clear_screan()
+    clear_screen()
     draw_rectangular((1,1), (40, 15), 'red', 'blue', 'bright')
