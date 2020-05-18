@@ -16,7 +16,7 @@ A single snake moves around the game board witch is controlled by user, using ar
 by pressing 'Esc' key the game has to pause. you have to make a ability to store the highest score on the game or other arbitrary method such as storying each user score.
 
 
-> note: Due to some reasons, currently in this version of project default keys binds are not exactly those tolled us to be, for now the keys are as follows:
+> note: Due to some reasons, currently in this version of project default keybinds are not exactly those tolled us to be. Just for now the keybinds are as follows:
 `Arrow keys` and `w a s d` for moving around, `q` to quit, `p` to pause and return for `select`. I'll fix the key binds and keyboard manager soon in addition key maps will be standardized as well.
 
 After a random time a single charachter food will deployed on a random spot of map and if snake eats that, its tail become longer.
