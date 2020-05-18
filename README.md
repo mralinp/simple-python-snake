@@ -7,7 +7,7 @@ Maybe there exists some bugs in this project but, because this is just an exampl
 
 ![menu image](https://github.com/mralinp/simple-python-snake/blob/master/img1.png)
 ![game environment](https://github.com/mralinp/simple-python-snake/blob/master/img2.png)
-## project deffenition
+## Project definition
 Please write a simple snake game as you may seen on old Nokia phones or other old phones.
 The game runs on a single page terminal and the size of the page is constant (i.e. 80*40).
 
@@ -22,7 +22,7 @@ by pressing 'Esc' key the game has to pause. you have to make a ability to store
 After a random time a single charachter food will deployed on a random spot of map and if snake eats that, its tail become longer.
 Map can contain some walls or obstacles that, if snake hits them the game will finish and player loses the game. the game can end also when snake eats its own tail.
 
-### bonuses
+### Bonuses
 
 Any creativity to make the game looks friendly and more pleasant such as having a menu, several levels, or even it can have a story line(this must be a little hard but nothing is impossible, trust me my child).
 
