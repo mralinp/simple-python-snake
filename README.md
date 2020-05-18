@@ -12,7 +12,12 @@ Please write a simple snake game as you may seen on old Nokia phones or other ol
 The game runs on a single page terminal and the size of the page is constant (i.e. 80*40).
 
 A single snake moves around the game board witch is controlled by user, using arrows keys or 'W', 'A', 'S' and 'D' to move UP, LEFT, DOWN and RIGHT respectively.
+
 by pressing 'Esc' key the game has to pause. you have to make a ability to store the highest score on the game or other arbitrary method such as storying each user score.
+
+
+> note: Due to some reasons, currently in this version of project default keys binds are not exactly those tolled us to be, for now the keys are as follows:
+`Arrow keys` and `w a s d` for moving around, `q` to quit, `p` to pause and return for `select`. I'll fix the key binds and keyboard manager soon in addition key maps will be standardized as well.
 
 After a random time a single charachter food will deployed on a random spot of map and if snake eats that, its tail become longer.
 Map can contain some walls or obstacles that, if snake hits them the game will finish and player loses the game. the game can end also when snake eats its own tail.
